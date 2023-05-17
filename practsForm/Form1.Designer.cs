@@ -38,6 +38,7 @@
             this.database1DataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.insertButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
@@ -62,7 +63,7 @@
             // 
             this.updateButton.BackColor = System.Drawing.Color.Silver;
             this.updateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.updateButton.Location = new System.Drawing.Point(620, 90);
+            this.updateButton.Location = new System.Drawing.Point(627, 96);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(120, 49);
             this.updateButton.TabIndex = 9;
@@ -82,7 +83,7 @@
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
-            this.dataGridView1.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView1_UserAddedRow);
+            //this.dataGridView1.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView1_UserAddedRow);
             // 
             // panel1
             // 
@@ -115,7 +116,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(32, 68);
+            this.label1.Location = new System.Drawing.Point(303, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(207, 29);
             this.label1.TabIndex = 14;
@@ -124,11 +125,24 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(37, 105);
+            this.textBox1.Location = new System.Drawing.Point(308, 111);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(259, 34);
             this.textBox1.TabIndex = 15;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // insertButton
+            // 
+            this.insertButton.BackColor = System.Drawing.Color.Silver;
+            this.insertButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.insertButton.Location = new System.Drawing.Point(25, 96);
+            this.insertButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.insertButton.Name = "insertButton";
+            this.insertButton.Size = new System.Drawing.Size(154, 49);
+            this.insertButton.TabIndex = 16;
+            this.insertButton.Text = "добавить";
+            this.insertButton.UseVisualStyleBackColor = false;
+            this.insertButton.Click += new System.EventHandler(this.insertButton_Click);
             // 
             // maneForm
             // 
@@ -136,6 +150,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(793, 450);
+            this.Controls.Add(this.insertButton);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
@@ -167,6 +182,7 @@
         private System.Windows.Forms.BindingSource database1DataSetBindingSource1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button insertButton;
     }
 }
 

@@ -123,35 +123,30 @@ namespace practsForm
                             sqlDataAdapter.Update(dataSet, "WebPassword");
                         }
                     }
-                    if (task == "Insert")
-                    {
-
-                        //if (isUserExists())
-                        //{
-                        //    return;
-                        //}
+                    //if (task == "Insert")
+                    //{
 
 
-                        int rowIndex = dataGridView1.Rows.Count - 2;
+                    //    int rowIndex = dataGridView1.Rows.Count - 2;
 
-                        DataRow row = dataSet.Tables["WebPassword"].NewRow();
+                    //    DataRow row = dataSet.Tables["WebPassword"].NewRow();
 
-                        row["webName"] = dataGridView1.Rows[rowIndex].Cells["webName"].Value;
-                        row["login"] = dataGridView1.Rows[rowIndex].Cells["login"].Value;
-                        row["password"] = dataGridView1.Rows[rowIndex].Cells["password"].Value;
+                    //    row["webName"] = dataGridView1.Rows[rowIndex].Cells["webName"].Value;
+                    //    row["login"] = dataGridView1.Rows[rowIndex].Cells["login"].Value;
+                    //    row["password"] = dataGridView1.Rows[rowIndex].Cells["password"].Value;
 
-                        dataSet.Tables["WebPassword"].Rows.Add(row);
+                    //    dataSet.Tables["WebPassword"].Rows.Add(row);
 
-                        dataSet.Tables["WebPassword"].Rows.RemoveAt(dataSet.Tables["WebPassword"].Rows.Count - 1);
+                    //    dataSet.Tables["WebPassword"].Rows.RemoveAt(dataSet.Tables["WebPassword"].Rows.Count - 1);
 
-                        dataGridView1.Rows.RemoveAt(dataGridView1.Rows.Count - 2);
+                    //    dataGridView1.Rows.RemoveAt(dataGridView1.Rows.Count - 2);
 
-                        dataGridView1.Rows[e.RowIndex].Cells[4].Value = "Delete";
+                    //    dataGridView1.Rows[e.RowIndex].Cells[4].Value = "Delete";
 
-                        sqlDataAdapter.Update(dataSet, "WebPassword");
+                    //    sqlDataAdapter.Update(dataSet, "WebPassword");
 
-                        newRowAdding = false;
-                    }
+                    //    newRowAdding = false;
+                    //}
                     if (task == "Update")
                     {
                         int r = e.RowIndex;
@@ -174,30 +169,30 @@ namespace practsForm
             }
         }
 
-        private void dataGridView1_UserAddedRow(object sender, DataGridViewRowEventArgs e)
-        {
-            try
-            {
-                if (newRowAdding == false)
-                {
-                    newRowAdding = true;
+        //private void dataGridView1_UserAddedRow(object sender, DataGridViewRowEventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (newRowAdding == false)
+        //        {
+        //            newRowAdding = true;
 
-                    int lastRow = dataGridView1.Rows.Count - 2;
+        //            int lastRow = dataGridView1.Rows.Count - 2;
 
-                    DataGridViewRow row = dataGridView1.Rows[lastRow];
+        //            DataGridViewRow row = dataGridView1.Rows[lastRow];
 
-                    DataGridViewLinkCell linkCell = new DataGridViewLinkCell();
+        //            DataGridViewLinkCell linkCell = new DataGridViewLinkCell();
 
-                    dataGridView1[4, lastRow] = linkCell;
+        //            dataGridView1[4, lastRow] = linkCell;
 
-                    row.Cells["Command"].Value = "Insert";
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        //            row.Cells["Command"].Value = "Insert";
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -266,6 +261,16 @@ namespace practsForm
             }
             else
                 return false;
+        }
+
+        private void insertButton_Click(object sender, EventArgs e)
+        {
+
+            InsertForm insertForm = new InsertForm();
+
+
+            insertForm.Show();
+
         }
     }
 }
