@@ -123,30 +123,7 @@ namespace practsForm
                             sqlDataAdapter.Update(dataSet, "WebPassword");
                         }
                     }
-                    //if (task == "Insert")
-                    //{
-
-
-                    //    int rowIndex = dataGridView1.Rows.Count - 2;
-
-                    //    DataRow row = dataSet.Tables["WebPassword"].NewRow();
-
-                    //    row["webName"] = dataGridView1.Rows[rowIndex].Cells["webName"].Value;
-                    //    row["login"] = dataGridView1.Rows[rowIndex].Cells["login"].Value;
-                    //    row["password"] = dataGridView1.Rows[rowIndex].Cells["password"].Value;
-
-                    //    dataSet.Tables["WebPassword"].Rows.Add(row);
-
-                    //    dataSet.Tables["WebPassword"].Rows.RemoveAt(dataSet.Tables["WebPassword"].Rows.Count - 1);
-
-                    //    dataGridView1.Rows.RemoveAt(dataGridView1.Rows.Count - 2);
-
-                    //    dataGridView1.Rows[e.RowIndex].Cells[4].Value = "Delete";
-
-                    //    sqlDataAdapter.Update(dataSet, "WebPassword");
-
-                    //    newRowAdding = false;
-                    //}
+                    
                     if (task == "Update")
                     {
                         int r = e.RowIndex;
@@ -169,30 +146,7 @@ namespace practsForm
             }
         }
 
-        //private void dataGridView1_UserAddedRow(object sender, DataGridViewRowEventArgs e)
-        //{
-        //    try
-        //    {
-        //        if (newRowAdding == false)
-        //        {
-        //            newRowAdding = true;
 
-        //            int lastRow = dataGridView1.Rows.Count - 2;
-
-        //            DataGridViewRow row = dataGridView1.Rows[lastRow];
-
-        //            DataGridViewLinkCell linkCell = new DataGridViewLinkCell();
-
-        //            dataGridView1[4, lastRow] = linkCell;
-
-        //            row.Cells["Command"].Value = "Insert";
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -238,30 +192,6 @@ namespace practsForm
             lastPoint = new Point(e.X, e.Y);
         }
 
-        public Boolean isUserExists()
-        {
-
-            DataTable table = new DataTable();
-
-            SqlDataAdapter adapter = new SqlDataAdapter();
-
-            int rowIndex = dataGridView1.SelectedCells[0].RowIndex;
-
-
-            SqlCommand command = new SqlCommand("SELECT * FROM `WebPassword` WHERE `webName` = @uN", sqlConnection);
-            command.Parameters.Add("@uN", SqlDbType.VarChar).Value = dataGridView1[1, rowIndex].Value;
-
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
-
-            if (table.Rows.Count > 0)
-            {
-                MessageBox.Show("такой логин уже зарегестрирован");
-                return true;
-            }
-            else
-                return false;
-        }
 
         private void insertButton_Click(object sender, EventArgs e)
         {

@@ -33,27 +33,22 @@ namespace practsForm
                 MessageBox.Show("Введите название");
                 return;
             }
-
             if (loginText.Text == "")
             {
                 MessageBox.Show("Введите логин");
                 return;
             }
-
             if (passName.Text == "")
             {
                 MessageBox.Show("Введите пароль");
                 return;
             }
-
             if (isUserExists())
             {
                 return;
             }
 
-
             sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\practsForm\practsForm\Database1.mdf;Integrated Security=True");
-
             SqlCommand command = new SqlCommand();
             command.CommandType = CommandType.Text;
 
@@ -67,12 +62,10 @@ namespace practsForm
             command.Connection = sqlConnection;
 
             sqlConnection.Open();
-
             if (command.ExecuteNonQuery() == 1)
                 MessageBox.Show("добавлен");
             else
                 MessageBox.Show("не получилось добавить");
-
             sqlConnection.Close();
 
             this.Close();
